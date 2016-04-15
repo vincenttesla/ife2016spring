@@ -1,0 +1,143 @@
+@charset "UTF-8";
+.banner-controll a {
+  display: inline-block;
+}
+
+.wrap {
+  position: relative;
+}
+
+.slider li, .banner-controll {
+  position: absolute;
+}
+
+.slider, .banner-controll a {
+  text-align: center;
+}
+
+.wrap, .banner-controll {
+  overflow: hidden;
+}
+
+body, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 14px "Microsoft Yahei";
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  width: 400px;
+}
+
+.colgroup:first-child {
+  width: 15%;
+}
+
+.colgroup:nth-child(2) {
+  width: 60%;
+}
+
+.colgroup:last-child {
+  width: 25%;
+}
+
+.table-head tr {
+  background-color: #000;
+  color: #fff;
+}
+
+.table-content tr:nth-child(even) {
+  background-color: #ccc;
+}
+.table-content tr:nth-child(1) {
+  color: red;
+}
+.table-content tr:nth-child(2) {
+  color: red;
+}
+.table-content tr:nth-child(3) {
+  color: red;
+}
+
+#scaleInput {
+  margin-top: 30px;
+  width: 150px;
+  -moz-transition: width 500ms;
+  /* Firefox 4 */
+  -webkit-transition: width 500ms;
+  /* Safari and Chrome */
+  -o-transition: width 500ms;
+  /* Opera */
+  transition: width 500ms;
+}
+#scaleInput:focus {
+  width: 200px;
+}
+
+.wrap {
+  margin-top: 30px;
+  border: 1px solid #9cc5ef;
+  width: 300px;
+  height: 200px;
+}
+
+@keyframes scroll {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+.slider {
+  width: 300%;
+  font: bold 100px/200px "Microsoft Yahei";
+  color: #fff;
+}
+.slider li {
+  width: 300px;
+  height: 100%;
+}
+.slider li:nth-child(1) {
+  z-index: 1;
+  background-color: #6bacef;
+}
+.slider li:nth-child(2) {
+  z-index: 2;
+  background-color: #297cd3;
+}
+.slider li:nth-child(3) {
+  z-index: 3;
+  background-color: #01254a;
+}
+.slider li:target {
+  z-index: 6;
+  animation: scroll 500ms linear;
+}
+
+.banner-controll {
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+.banner-controll a {
+  margin-left: 2px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  background-color: #fff;
+  color: #000;
+}

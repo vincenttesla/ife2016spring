@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+	<meta charset="UTF-8">
+	<title>task_1_3_1</title>
+	<style>
+body,.wraper,.left,.mid,.right{
+	padding: 20px;
+}
+.wraper,.left,.mid,.right{
+		border: 1px solid #999;
+}
+.wraper{
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	background-color: #eee;
+}
+.left-fixed,.mid-fixed,.right-fixed{
+	display: table-cell;
+}
+.left-fixed{
+	position: relative;
+	width: 200px;
+}
+.left{
+	position: absolute;
+}
+.team_logo{
+	float: left;
+}
+.team_name{
+	margin-left: 100px;
+}
+.mid-fixed{
+	padding: 0 20px;
+}
+.right-fixed{
+	width: 120px;
+}
+.left img,.right img{
+	width: 80px;
+	height: 80px;
+	background-color: #eee;
+}
+.mid-fixed{
+	position: relative;
+}
+.mid{
+	position: absolute;
+	left: 20px;
+	right:20px;
+}
+.right{
+	padding: 9px 19px;
+}
+.right div{
+	margin:10px 0;
+}
+	</style>
+</head>
+<body>
+	<div class="wraper">
+		<div class="left-fixed">
+			<div class="left">
+				<div class="team_logo"><img src="https://avatars3.githubusercontent.com/u/11407268?v=3&u=911dac112cd4d7ca48653d481d1a2759b240cd46&s=140" alt="团队logo"></div>
+				<div class="team_name">啦啦啦啦啦</div>
+			</div>
+		</div>
+		<div class="mid-fixed">
+			<div class="mid">
+			“啦”用在歌曲的唱词中，一般是高潮和副歌部分较多见，起强调主题抒发感情的作用，用来表现已经超出唱词表达极限范围的意义。
+			</div>
+		</div>
+		<div class="right-fixed">
+			<div class="right">
+				<div><img src="https://avatars3.githubusercontent.com/u/11407268?v=3&u=911dac112cd4d7ca48653d481d1a2759b240cd46&s=140" alt="个人logo"></div>
+				<div><img src="https://avatars3.githubusercontent.com/u/11407268?v=3&u=911dac112cd4d7ca48653d481d1a2759b240cd46&s=140" alt="个人logo"></div>
+				<div><img src="https://avatars3.githubusercontent.com/u/11407268?v=3&u=911dac112cd4d7ca48653d481d1a2759b240cd46&s=140" alt="个人logo"></div>
+				<div><img src="https://avatars3.githubusercontent.com/u/11407268?v=3&u=911dac112cd4d7ca48653d481d1a2759b240cd46&s=140" alt="个人logo"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

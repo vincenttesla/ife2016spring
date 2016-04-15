@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task_1_10</title>
+	<style>
+body{
+	margin: 0;
+	padding: 0;
+}
+.wraper{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+}
+.flex{
+	width: 150px;
+	margin-bottom: 10px;
+	border: 1px solid #f00;
+}
+.flex1{
+	height: 120px;
+}
+.flex2{
+	height: 100px;
+}
+.flex3{
+	height: 40px;
+}
+.flex4{
+	height: 200px;
+	border-color: #0f0; 
+}
+@media (max-width: 640px){
+	.wraper{
+		align-content: flex-start;
+	}
+	.flex4{
+		order: -1;
+	}
+}
+
+
+	</style>
+
+</head>
+<body>
+<div class="wraper">
+	<div class="flex flex1"></div>
+	<div class="flex flex2"></div>
+	<div class="flex flex3"></div>
+	<div class="flex flex4"></div>
+</div>
+</body>
+</html>
