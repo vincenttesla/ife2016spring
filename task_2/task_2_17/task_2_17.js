@@ -55,9 +55,13 @@ var pageState = {
  * 渲染图表
  */
 function renderChart() {
+  var wraper = document.getElementsByClassName("aqi-chart-wrap")[0];
+  var html = "";
   for(key in chartData){
-    
+    color = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+    html += "<div class=\"aqi-chart-bar\" style=\"height:"+chartData[key]+"px;background-color:"+color+"\" title="+key+"></div>";
   }
+  wraper.innerHTML = html;
 }
 
 /**
@@ -70,6 +74,7 @@ function graTimeChange() {
   // 设置对应数据
   pageState.nowGraTime = event.target.value;
   // 调用图表渲染函数
+  initAqiChartData()
   renderChart();
   }
 }
@@ -77,15 +82,12 @@ function graTimeChange() {
 /**
  * select发生变化时的处理函数
  */
-function citySelectChange() {
-  // 确定是否选项发生了变化 
-  var event = arguments[0]; 
-  if(event.target.value != pageState.nowSelectCity){
+function citySelectChange(value) {
   // 设置对应数据
-  pageState.nowSelectCity = event.target.value;
+  pageState.nowSelectCity = value;
   // 调用图表渲染函数
+  initAqiChartData()
   renderChart();
-  }
 }
 
 /**
@@ -109,15 +111,14 @@ function initCitySelector() {
   var selectedCity = document.getElementById("city-select");
   var html = "";
   for(key in aqiSourceData){
-    html += "<option>"+key+"<option>";
+    html += "<option>"+key+"</option>";
   }
   selectedCity.innerHTML = html;
   // 给select设置事件，当选项发生变化时调用函数citySelectChange
   addEvent(selectedCity, "click",  function(event){
-    var target = event.target || event.srcElement;
-    if(target.tagName.toLowerCase() == "option"){
-      citySelectChange.call(target,event);
-    }
+   if(selectedCity.value != pageState.nowSelectCity){
+    citySelectChange(selectedCity.value);
+   }
   });
 }
 
@@ -166,9 +167,21 @@ function initAqiChartData() {
         index = 0;
       }
     }
+    processedData[month] = Math.ceil(sum/index);
   }
   // 处理好的数据存到 chartData 中
   chartData = processedData;
+}
+
+function addEvent(element, event, listener){
+  if(element.addEventListener){
+    element.addEventListener(event,listener,false);
+  }else if(element.attachEvent){
+    event = "on" + event;
+    element.attachEvent(event,listener);
+  }else{
+    element["on" + event] = listener;
+  }
 }
 
 /**
@@ -178,6 +191,7 @@ function init() {
   initGraTimeForm()
   initCitySelector();
   initAqiChartData();
+  renderChart();
 }
 
 init();
