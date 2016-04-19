@@ -1,0 +1,35 @@
+#input-wraper{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#input-wraper input{
+	border: 1px solid #9FA9D1;
+	border-radius: 2px;
+}
+#input-wraper button{
+	border: 0;
+	border-radius: 2px;
+	background-color: #9FA9D1;
+	color: #EEF3F1;
+}
+#queue-wraper{
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	align-items: flex-end;
+	width: 80%;
+	height: 70%;
+	border: 1px solid #000;
+	border-radius: 5px;
+	background-color: #EEF3F1;
+}
+#queue-wraper div{
+	flex: 1;
+	margin: 0 1px;
+	font-weight: bold;
+	background-color: #A2B8D4;
+	color: #DCFB54;
+}
